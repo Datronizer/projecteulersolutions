@@ -5,15 +5,50 @@
 
 int main()
 {
-    // Counts 
+    int n, i, total{};
+
+    printf("Please state the number you're assessing: ");
+    scanf_s("%d", &n);
+    
+    // Computes all multiples of 3 less than n and sums them up
+    for (i = 0; i < n; i++)
+    {
+        int currentNum3 = 3 * i;
+
+        if (currentNum3 >= n)
+            break;
+
+        else
+        {
+            total = total + currentNum3;
+            //printf("%d ", currentNum3);
+        }
+    }
+
+    // Computes all multiples of 5 less than n and sum them together with the previous one
+    for (i = 0; i < n; i++)
+    {
+        int currentNum5 = 5 * i;
+
+        if (currentNum5 >= n)
+            break;
+
+        else if (currentNum5 % 3 == 0)
+        {
+            total = total + 0;
+            //printf("%d(skipped) ", currentNum5);
+        }
+
+        else
+        {
+            total = total + currentNum5;
+            //printf("%d ", currentNum5);
+        }
+    }
+
+    printf("\nThe total is: %d\n", total);
+    return 0;
 }
-
-
-
-
-
-
-
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
